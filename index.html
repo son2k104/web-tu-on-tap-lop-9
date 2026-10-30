@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ôn Tập Giữa HK1 – Lớp 9</title>
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}</script>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+html.dark{color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:Inter,system-ui,sans-serif}
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 min-h-screen transition-colors">
+<div id="app" class="max-w-3xl mx-auto px-4 py-6"></div>
+
+<script>
+/* ===== DỮ LIỆU: thêm môn mới bằng cách copy 1 khối môn, đổi id/title/câu hỏi ===== */
+const subjectData = {
+  "khtn9": {"id": "khtn9", "title": "Khoa học tự nhiên 9", "subtitle": "Kim loại, di truyền & DNA", "desc": "Ôn tập giữa HK1: tính chất kim loại, di truyền Mendel, cấu trúc DNA/RNA kèm phần lý thuyết trọng tâm.", "icon": "🔬", "color": "emerald",
+    "p1": [
+      {"q": "Tính chất vật lý chung của kim loại bao gồm những tính chất nào sau đây?", "options": ["Tính dẻo, tính dẫn điện, tính dẫn nhiệt và ánh kim.", "Tính giòn, tính dẫn điện, tính dẫn nhiệt và ánh kim.", "Tính dẻo, tính dẫn điện, tính từ tính và tính cứng.", "Tính dẻo, tính tan trong nước, tính dẫn nhiệt và ánh kim."], "answer": 0},
+      {"q": "Kim loại nào sau đây tác dụng mãnh liệt với nước ở nhiệt độ thường giải phóng khí Hydrogen?", "options": ["Na (Sodium).", "Fe (Iron).", "Cu (Copper).", "Ag (Silver)."], "answer": 0},
+      {"q": "Sản phẩm thu được khi cho Zinc (Zn) tác dụng với dung dịch HCl loãng là gì?", "options": ["ZnCl2 và H2.", "ZnCl2 và H2O.", "ZnO và H2.", "ZnCl2 và Cl2."], "answer": 0},
+      {"q": "Hiện tượng xảy ra khi cho đinh sắt (Fe) vào dung dịch Copper(II) sulfate (CuSO4) là gì?", "options": ["Sắt tan dần, có lớp kim loại màu đỏ đồng bám ngoài đinh sắt, màu xanh dung dịch nhạt dần.", "Có khí màu nâu đỏ thoát ra mạnh mẽ.", "Không có hiện tượng gì xảy ra vì Fe đứng sau Cu.", "Dung dịch chuyển sang màu tím đậm."], "answer": 0},
+      {"q": "Những đặc điểm về hình thái, cấu tạo, sinh lí của một cơ thể sinh vật được gọi là gì?", "options": ["Tính trạng.", "Kiểu gene.", "Kiểu hình.", "Nhân tố di truyền."], "answer": 0},
+      {"q": "Phép lai giữa cơ thể mang tính trạng trội chưa biết kiểu gene với cơ thể mang tính trạng lặn được gọi là gì?", "options": ["Lai phân tích.", "Lai kinh tế.", "Lai nghịch.", "Lai xông dòng."], "answer": 0},
+      {"q": "Đơn phân cấu tạo nên phân tử DNA bao gồm những loại nào?", "options": ["A, T, G, C.", "A, U, G, C.", "A, T, U, C.", "A, T, G, U."], "answer": 0},
+      {"q": "Loại RNA nào làm nhiệm vụ truyền đạt thông tin di truyền từ DNA trong nhân ra tế bào chất?", "options": ["mRNA (RNA thông tin).", "tRNA (RNA vận chuyển).", "rRNA (RNA ribosome).", "snRNA."], "answer": 0},
+      {"q": "Cơ chế tái bản DNA diễn ra theo những nguyên tắc cơ bản nào?", "options": ["Nguyên tắc bổ sung và nguyên tắc bán bảo toàn.", "Nguyên tắc bổ sung và nguyên tắc bảo toàn hoàn toàn.", "Nguyên tắc bán bảo toàn và nguyên tắc khuôn mẫu đơn.", "Nguyên tắc gián đoạn hoàn toàn."], "answer": 0},
+      {"q": "Đột biến gene là gì?", "options": ["Những biến đổi trong cấu trúc của gene liên quan tới 1 hoặc một số cặp nucleotide.", "Sự thay đổi số lượng chuỗi polypeptide trong tế bào.", "Sự trao đổi chéo giữa các nhiễm sắc thể không tương đồng.", "Sự biến đổi hình dạng bên ngoài do môi trường."], "answer": 0}
+    ],
+    "p2": [
+      {"title": "Câu 1. Về tính chất hóa học của kim loại:", "passage": "Kim loại thể hiện các tính chất hóa học đặc trưng như phản ứng với phi kim, nước, acid và dung dịch muối.", "items": [{"text": "a) Hầu hết kim loại phản ứng với Oxygen ở nhiệt độ cao tạo thành Base oxide.", "correct": true}, {"text": "b) Kim loại Cu có thể đẩy Fe ra khỏi dung dịch muối FeCl2.", "correct": false}, {"text": "c) Kim loại đứng trước Hydrogen trong dãy hoạt động hóa học tác dụng với HCl/H2SO4 loãng giải phóng khí H2.", "correct": true}, {"text": "d) Cho Na vào dung dịch CuSO4 sẽ thu được kim loại Cu bám vào đáy ống nghiệm.", "correct": false}]},
+      {"title": "Câu 2. Về di truyền học Mendel và cấu trúc DNA:", "passage": "Mendel sử dụng đậu Hà Lan để phát hiện ra các quy luật di truyền. Ngày nay di truyền học phát triển ở cấp độ phân tử dựa trên DNA và RNA.", "items": [{"text": "a) Kiểu gene đồng hợp trội (AA) và đồng hợp lặn (aa) được gọi là cơ thể thuần chủng.", "correct": true}, {"text": "b) DNA được cấu tạo gồm 2 mạch song song, ngược chiều và xoắn quanh một trục.", "correct": true}, {"text": "c) Phân tử RNA được cấu tạo theo nguyên tắc đa phân từ 4 loại nucleotide A, T, G, C.", "correct": false}, {"text": "d) Quá trình dịch mã diễn ra ở ribosome để tổng hợp chuỗi polypeptide dựa trên khuôn mRNA.", "correct": true}]}
+    ],
+    "p3": [
+      {"h": "1. Phương trình hóa học trọng tâm", "kind": "list", "lines": ["**Tác dụng với phi kim (O2, S):** 2Zn + O2 -(t°)→ 2ZnO | Mg + S -(t°)→ MgS", "**Tác dụng với nước:** 2Na + 2H2O → 2NaOH + H2↑", "**Tác dụng với acid:** Fe + 2HCl → FeCl2 + H2↑ | Zn + H2SO4 → ZnSO4 + H2↑", "**Tác dụng với muối:** Fe + CuSO4 → FeSO4 + Cu↓"]},
+      {"h": "2. Thuật ngữ di truyền Mendel", "kind": "list", "lines": ["**Tính trạng:** Đặc điểm hình thái, cấu tạo, sinh lý của sinh vật (ví dụ: hoa tím, thân cao).", "**Dòng thuần:** Tập hợp cá thể đồng nhất về kiểu gene, con cái sinh ra giống hệt bố mẹ.", "**Lai phân tích:** Phép lai giữa cơ thể mang tính trạng trội cần kiểm tra kiểu gene với cơ thể mang tính trạng lặn (AA x aa → 100% trội; Aa x aa → 1 trội : 1 lặn)."]},
+      {"h": "3. Sơ đồ mối quan hệ Gene và Tính trạng", "kind": "formula", "lines": ["Gene (DNA) → mRNA → Protein → Tính trạng"]}
+    ]},
+  "sudia9": {"id": "sudia9", "title": "Lịch sử & Địa lí 9", "subtitle": "Sử – Địa tích hợp", "desc": "Ôn tập giữa HK1: sự ra đời của Đảng, đô thị hóa, nông – lâm – thủy sản và công nghiệp xanh.", "icon": "🗺️", "color": "amber",
+    "p1": [
+      {"q": "Đô thị đóng vai trò chủ yếu nào đối với sự phát triển của khu vực?", "options": ["Là trung tâm quyền lực, kinh tế, hạt nhân đổi mới sáng tạo và tạo động lực phát triển.", "Chỉ tập trung vào phát triển nông nghiệp truyền thống.", "Là nơi duy nhất lưu giữ các di tích lịch sử cổ đại.", "Ngăn chặn các dòng giao lưu thương mại quốc tế."], "answer": 0},
+      {"q": "Nguyễn Ái Quốc có vai trò trực tiếp nào đối với sự ra đời của Đảng Cộng sản Việt Nam?", "options": ["Trực tiếp tổ chức, chủ trì Hội nghị hợp nhất và soạn thảo Cương lĩnh chính trị đầu tiên.", "Chỉ gửi thư chỉ đạo từ xa mà không trực tiếp tham gia hội nghị.", "Lãnh đạo cuộc Tổng khởi nghĩa Tháng Tám năm 1945.", "Soạn thảo Luận cương chính trị tháng 10 năm 1930."], "answer": 0},
+      {"q": "Yếu tố tự nhiên nào chiếm 3/4 diện tích đất liền nước ta, thuận lợi cho phát triển cây công nghiệp và chăn nuôi gia súc?", "options": ["Địa hình đồi núi.", "Đồng bằng châu thổ.", "Đồng bằng ven biển.", "Vùng đầm lầy ven sông."], "answer": 0},
+      {"q": "Sản lượng nuôi trồng thủy sản nước ta tập trung lớn nhất ở vùng nào sau đây?", "options": ["Đồng bằng sông Cửu Long.", "Đồng bằng sông Hồng.", "Bắc Trung Bộ.", "Tây Nguyên."], "answer": 0},
+      {"q": "Khái niệm 'Công nghiệp xanh' được hiểu là gì?", "options": ["Nền công nghiệp thân thiện với môi trường, giảm thiểu chất thải và tiết kiệm nhiên liệu.", "Ngành công nghiệp chuyên trồng cây xanh đô thị.", "Ngành sản xuất các sản phẩm sơn có màu xanh.", "Ngành công nghiệp khai thác tài nguyên thiên nhiên tối đa."], "answer": 0}
+    ],
+    "p2": [
+      {"title": "Câu 1. Về quá trình đô thị hóa thời kỳ hậu công nghiệp:", "passage": "Đô thị hóa diễn ra với nhiều đặc điểm mới về quy mô, chất lượng hạ tầng và xu hướng phát triển.", "items": [{"text": "a) Ở các nước phát triển, tỉ lệ dân thành thị ở mức cao và tốc độ tăng rất nhanh.", "correct": false}, {"text": "b) Đô thị hóa hiện đại hướng tới phát triển đô thị xanh và đô thị thông minh.", "correct": true}, {"text": "c) Hoạt động kinh tế đô thị tập trung chủ yếu vào nông nghiệp công nghệ cao.", "correct": false}, {"text": "d) Đô thị là các đầu mối giao thông, tài chính giúp tăng cường kết nối hội nhập.", "correct": true}]},
+      {"title": "Câu 2. Về ngành Lâm nghiệp và Thủy sản nước ta:", "passage": "Nhiều vùng sinh thái nước ta có thế mạnh nổi bật trong phát triển thủy sản khai thác và nuôi trồng.", "items": [{"text": "a) Vùng Bắc Trung Bộ và Duyên hải miền Trung có sản lượng thủy sản khai thác cao nhất cả nước.", "correct": true}, {"text": "b) Sản lượng thủy sản nuôi trồng chiếm tỉ trọng nhỏ hơn sản lượng khai thác.", "correct": false}, {"text": "c) Đồng bằng sông Cửu Long là vùng nuôi trồng thủy sản lớn nhất nước ta.", "correct": true}, {"text": "d) Thủy sản nước ta đã xuất khẩu sang các thị trường lớn như Hoa Kỳ, Nhật Bản, EU.", "correct": true}]}
+    ],
+    "p3": [
+      {"h": "1. Vai trò của Nguyễn Ái Quốc với việc thành lập Đảng (1930)", "kind": "list", "lines": ["Trực tiếp triệu tập và chủ trì Hội nghị hợp nhất các tổ chức cộng sản tại Hương Cảng (Trung Quốc).", "Phê phán những quan điểm chia rẽ cục bộ của các tổ chức cộng sản trong nước.", "Soạn thảo *Chính cương vắn tắt*, *Sách lược vắn tắt* - Cương lĩnh chính trị đầu tiên của Đảng."]},
+      {"h": "2. Nhân tố tự nhiên ảnh hưởng tới nông nghiệp nước ta", "kind": "list", "lines": ["**Địa hình & Đất:** 3/4 đồi núi (đất feralit) trồng cây công nghiệp; 1/4 đồng bằng (đất phù sa) trồng lúa và cây thực phẩm.", "**Khí hậu:** Nhiệt đới ẩm gió mùa, phân hóa đa dạng giúp cây trồng phát triển quanh năm, cơ cấu mùa vụ phong phú.", "**Nguồn nước:** Sông ngòi dày đặc, nguồn nước ngầm dồi dào đảm bảo tưới tiêu."]},
+      {"h": "3. Vấn đề phát triển công nghiệp xanh", "kind": "text", "lines": ["Thân thiện với môi trường, giảm thiểu chất thải, tái sử dụng nguyên liệu, tiết kiệm năng lượng (ví dụ: điện mặt trời, xử lý nước thải tuần hoàn)."]}
+    ]},
+  "tin9": {"id": "tin9", "title": "Tin học 9", "subtitle": "Thông tin & môi trường số", "desc": "Ôn tập giữa HK1: vai trò máy tính, chất lượng thông tin và ứng xử trên Internet.", "icon": "💻", "color": "blue",
+    "p1": [
+      {"q": "Bộ xử lý thông tin được gắn vào các thiết bị gia dụng như tivi, máy giặt, tủ lạnh nhằm mục đích gì?", "options": ["Giúp thiết bị có thêm nhiều tính năng thông minh và vận hành linh hoạt.", "Giúp thiết bị tăng trọng lượng để đứng vững hơn.", "Chỉ để làm đẹp cho sản phẩm.", "Ngăn chặn việc kết nối với nguồn điện."], "answer": 0},
+      {"q": "Máy tính có khả năng tính toán vượt trội như thế nào?", "options": ["Thực hiện hàng tỉ phép tính trong một giây một cách bền bỉ và chính xác.", "Chỉ thực hiện được vài trăm phép tính mỗi phút.", "Chỉ tính toán được các phép tính số nguyên đơn giản.", "Cần phải nghỉ ngơi sau mỗi 10 phép tính."], "answer": 0},
+      {"q": "Tiêu chí nào đánh giá thông tin đúng sự thật, có căn cứ và đáng tin cậy?", "options": ["Tính chính xác.", "Tính mới.", "Tính đầy đủ.", "Tính sử dụng được."], "answer": 0},
+      {"q": "Nội dung thông tin phản ánh tình hình tại thời điểm cần tìm hiểu và được cập nhật kịp thời thể hiện tiêu chí nào?", "options": ["Tính mới.", "Tính chính xác.", "Tính đầy đủ.", "Tính hấp dẫn."], "answer": 0},
+      {"q": "Hành vi nào sau đây vi phạm pháp luật và đạo đức khi hoạt động trên môi trường số?", "options": ["Đăng tải tin tức sai sự thật, bắt nạt hoặc lừa đảo qua mạng.", "Tải tài liệu học tập từ trang web chính thức của nhà trường.", "Gửi email trao đổi bài học với bạn cùng lớp.", "Đặt mật khẩu mạnh cho tài khoản cá nhân."], "answer": 0}
+    ],
+    "p2": [
+      {"title": "Câu 1. Về vai trò và ứng dụng của máy tính:", "passage": "Máy tính và các thiết bị số hóa có tác động sâu rộng đến mọi mặt của đời sống xã hội.", "items": [{"text": "a) Siêu máy tính được dùng để thực hiện các tính toán phức tạp trong dự báo thời tiết và nghiên cứu vũ trụ.", "correct": true}, {"text": "b) Công nghệ thông tin chỉ có tác động tích cực chứ không gây ra tác động tiêu cực nào.", "correct": false}, {"text": "c) Máy tính hỗ trợ nâng cao chất lượng dạy và học thông qua phần mềm mô phỏng và lớp học trực tuyến.", "correct": true}, {"text": "d) Việc nghiện Internet và trò chơi điện tử là một trong những tác động tiêu cực về thể chất và tinh thần.", "correct": true}]},
+      {"title": "Câu 2. Về chất lượng thông tin trong giải quyết vấn đề:", "passage": "Để đưa ra quyết định đúng đắn, người sử dụng cần đánh giá chất lượng thông tin tiếp nhận được.", "items": [{"text": "a) Thông tin thiếu thời gian khởi hành của chuyến tham quan là thông tin chưa đầy đủ.", "correct": true}, {"text": "b) Lịch thi năm 2024 vẫn có thể dùng làm căn cứ chính xác cho kì thi năm 2026.", "correct": false}, {"text": "c) Thông tin đáng tin cậy phải có nguồn gốc rõ ràng và có thể kiểm chứng được.", "correct": true}, {"text": "d) Mọi thông tin tìm thấy trên mạng xã hội đều đáp ứng tiêu chí tính sử dụng được.", "correct": false}]}
+    ],
+    "p3": [
+      {"h": "1. Các tiêu chí đánh giá chất lượng thông tin", "kind": "list", "lines": ["**Tính mới:** Thông tin cập nhật kịp thời, đúng thời điểm cần tìm hiểu.", "**Tính chính xác:** Đúng sự thật, có căn cứ, nguồn tin đáng tin cậy để kiểm chứng.", "**Tính đầy đủ:** Chứa đủ các dữ liệu cần thiết để giải quyết vấn đề.", "**Tính sử dụng được:** Phù hợp với mục đích và có thể áp dụng vào thực tế."]},
+      {"h": "2. Tác động của máy tính và Internet", "kind": "list", "lines": ["**Tích cực:** Tăng năng suất lao động, lưu trữ dữ liệu lớn, kết nối toàn cầu, mở ra các phương thức học tập trực tuyến mới.", "**Tiêu cực:** Nguy cơ rò rỉ thông tin cá nhân, lừa đảo trực tuyến, vi phạm bản quyền, rác thải điện tử và nghiện game/mạng xã hội."]},
+      {"h": "3. Hành vi cần tránh khi dùng Internet", "kind": "text", "lines": ["Xuyên tạc lịch sử, phát tán tin giả, xâm phạm danh dự người khác, sử dụng phần mềm không bản quyền và bắt nạt trên không gian mạng."]}
+    ]}
+};
+
+/* ===== TIỆN ÍCH ===== */
+const COLORS = {
+  indigo:  {grad:'from-indigo-500 to-indigo-700',  btn:'bg-indigo-600 hover:bg-indigo-700',  soft:'bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300',   bar:'bg-indigo-500',  tab:'border-indigo-500 text-indigo-600 dark:text-indigo-400'},
+  emerald: {grad:'from-emerald-500 to-teal-700',   btn:'bg-emerald-600 hover:bg-emerald-700',soft:'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300',bar:'bg-emerald-500', tab:'border-emerald-500 text-emerald-600 dark:text-emerald-400'},
+  amber:   {grad:'from-amber-500 to-orange-600',   btn:'bg-amber-600 hover:bg-amber-700',    soft:'bg-amber-50 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300',       bar:'bg-amber-500',   tab:'border-amber-500 text-amber-600 dark:text-amber-400'},
+  rose:    {grad:'from-rose-500 to-red-700',       btn:'bg-rose-600 hover:bg-rose-700',      soft:'bg-rose-50 text-rose-700 dark:bg-rose-950/60 dark:text-rose-300',           bar:'bg-rose-500',    tab:'border-rose-500 text-rose-600 dark:text-rose-400'},
+  blue:    {grad:'from-blue-500 to-blue-700',      btn:'bg-blue-600 hover:bg-blue-700',      soft:'bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300',           bar:'bg-blue-500',    tab:'border-blue-500 text-blue-600 dark:text-blue-400'}
+};
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const shuffle = a => { const r=[...a]; for(let i=r.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[r[i],r[j]]=[r[j],r[i]];} return r; };
+const LET = ['A','B','C','D'];
+const card = 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-sm';
+const isDark = () => document.documentElement.classList.contains('dark');
+const total2 = d => d.p2.reduce((s,q)=>s+q.items.length,0);
+
+let S = {view:'hub'};
+
+function start(id){
+  const d = subjectData[id]; if(!d) return;
+  S = {view:'quiz', sub:d, tab:1,
+    p1:{qs:shuffle(d.p1).map(q=>({q:q.q, o:shuffle(q.options.map((t,i)=>({t, ok:i===q.answer})))})), i:0, score:0, pick:null, done:false},
+    p2:{qs:shuffle(d.p2), i:0, score:0, ans:{}, checked:false, done:false}};
+  render(); window.scrollTo(0,0);
+}
+function go(id){ if(location.hash==='#'+id) start(id); else location.hash = id; }
+function route(){
+  const id = location.hash.slice(1);
+  if(id && subjectData[id]){ if(!(S.sub && S.sub.id===id && S.view!=='hub')) start(id); }
+  else { S={view:'hub'}; render(); }
+}
+window.addEventListener('hashchange', route);
+
+/* ===== VIEWS ===== */
+function themeBtn(){
+  return `<button data-act="theme" class="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-700" aria-label="Đổi giao diện sáng/tối">${isDark()?'☀️ Sáng':'🌙 Tối'}</button>`;
+}
+
+function hub(){
+  const cards = Object.values(subjectData).map(d=>{
+    const c = COLORS[d.color]||COLORS.blue;
+    return `<div class="${card} overflow-hidden flex flex-col">
+      <div class="bg-gradient-to-br ${c.grad} text-white p-5"><div class="text-4xl mb-2" aria-hidden="true">${d.icon}</div>
+        <h2 class="text-xl font-extrabold">${esc(d.title)}</h2><p class="text-sm opacity-90">${esc(d.subtitle)}</p></div>
+      <div class="p-5 flex flex-col gap-4 flex-1">
+        <p class="text-sm text-slate-600 dark:text-slate-300 flex-1">${esc(d.desc)}</p>
+        <div class="flex flex-wrap gap-2 text-xs font-semibold">
+          <span class="px-2.5 py-1 rounded-full ${c.soft}">${d.p1.length} câu trắc nghiệm</span>
+          <span class="px-2.5 py-1 rounded-full ${c.soft}">${d.p2.length} câu Đúng/Sai (${total2(d)} ý)</span>${d.p3?`<span class="px-2.5 py-1 rounded-full ${c.soft}">Có lý thuyết trọng tâm</span>`:''}</div>
+        <button data-act="open" data-id="${esc(d.id)}" class="w-full ${c.btn} text-white font-semibold py-2.5 rounded-xl transition">Bắt đầu ôn tập</button>
+      </div></div>`;}).join('');
+  return `<header class="flex items-center justify-between gap-3 mb-6">
+      <div><h1 class="text-2xl sm:text-3xl font-extrabold">Ôn Tập Giữa HK1 · Lớp 9</h1><p class="text-sm text-slate-500 dark:text-slate-400">Chọn môn học để bắt đầu</p></div>${themeBtn()}</header>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">${cards}</div>`;
+}
+
+function quiz(){
+  const d=S.sub, c=COLORS[d.color]||COLORS.blue;
+  const tabs=[[1,'Phần I · Trắc nghiệm'],[2,'Phần II · Đúng / Sai'],...(d.p3?[[3,'Phần III · Lý thuyết']]:[])].map(([n,l])=>
+    `<button data-act="tab" data-n="${n}" class="flex-1 py-3 px-1 text-xs sm:text-sm font-semibold border-b-2 ${S.tab===n?c.tab:'border-transparent text-slate-500 dark:text-slate-400'}">${l}${(S['p'+n]||{}).done?' ✓':''}</button>`).join('');
+  return `<header class="flex items-center justify-between gap-2 mb-4">
+      <button data-act="home" class="px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-700">‹ Chọn môn khác</button>
+      <div class="flex gap-2"><button data-act="finish" class="px-3 py-2 rounded-xl text-sm font-semibold text-white ${c.btn}">Nộp bài</button>${themeBtn()}</div></header>
+    <h1 class="text-xl sm:text-2xl font-extrabold mb-3">${d.icon} ${esc(d.title)}</h1>
+    <div class="flex ${card} mb-4 overflow-hidden">${tabs}</div>
+    ${S.tab===1?part1(c):S.tab===2?part2(c):part3(c)}`;
+}
+
+function progress(c, i, n, score, label){
+  return `<div class="flex justify-between text-sm font-semibold mb-2"><span>Câu ${Math.min(i+1,n)} / ${n}</span><span>${label}: ${score}</span></div>
+    <div class="h-2 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden mb-5"><div class="h-full ${c.bar} transition-all" style="width:${Math.round(i/n*100)}%"></div></div>`;
+}
+
+function donePanel(n, c){
+  const p=S['p'+n], other=S['p'+(3-n)];
+  const txt = n===1 ? `${p.score} / ${p.qs.length} câu đúng` : `${p.score} / ${total2(S.sub)} ý đúng`;
+  const nextBtn = other.done
+    ? `<button data-act="finish" class="${c.btn} text-white font-semibold px-5 py-2.5 rounded-xl">Xem kết quả tổng</button>`
+    : `<button data-act="tab" data-n="${3-n}" class="${c.btn} text-white font-semibold px-5 py-2.5 rounded-xl">Sang Phần ${n===1?'II':'I'}</button>`;
+  return `<div class="${card} p-6 text-center"><div class="text-4xl mb-2">🎉</div><h2 class="text-lg font-bold mb-1">Hoàn thành Phần ${n===1?'I':'II'}</h2>
+    <p class="text-slate-600 dark:text-slate-300 mb-4">${txt}</p>${nextBtn}</div>`;
+}
+
+function part1(c){
+  const p=S.p1, n=p.qs.length;
+  if(p.done) return donePanel(1,c);
+  const q=p.qs[p.i], answered=p.pick!==null;
+  const opts=q.o.map((o,k)=>{
+    let cls='border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700';
+    if(answered){ if(o.ok) cls='bg-green-500 border-green-600 text-white'; else if(k===p.pick) cls='bg-red-500 border-red-600 text-white'; else cls='border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 opacity-60'; }
+    return `<button data-act="pick" data-k="${k}" ${answered?'disabled':''} class="w-full text-left flex gap-3 items-start rounded-xl border-2 px-4 py-3 transition ${cls}">
+      <span class="shrink-0 w-7 h-7 rounded-full bg-black/10 dark:bg-white/10 flex items-center justify-center text-sm font-bold">${LET[k]}</span><span class="pt-0.5">${esc(o.t)}</span></button>`;}).join('');
+  let fb='';
+  if(answered){ const ok=q.o[p.pick].ok, right=q.o.findIndex(o=>o.ok);
+    fb=`<div role="status" class="mt-4 p-3 rounded-xl text-sm font-medium ${ok?'bg-green-50 text-green-800 dark:bg-green-950/50 dark:text-green-300':'bg-red-50 text-red-800 dark:bg-red-950/50 dark:text-red-300'}">${ok?'✅ Chính xác!':`❌ Chưa đúng. Đáp án đúng là ${LET[right]}: ${esc(q.o[right].t)}`}</div>
+      <button data-act="next1" class="mt-4 w-full ${c.btn} text-white font-semibold py-3 rounded-xl">${p.i+1<n?'Câu tiếp theo →':'Hoàn thành Phần I'}</button>`; }
+  return `${progress(c,p.i,n,p.score,'Điểm')}<div class="${card} p-5">
+    <h2 class="text-lg font-semibold mb-4 leading-snug">${esc(q.q)}</h2><div class="flex flex-col gap-3">${opts}</div>${fb}</div>`;
+}
+
+function part2(c){
+  const p=S.p2, n=p.qs.length;
+  if(p.done) return donePanel(2,c);
+  const q=p.qs[p.i];
+  const title=(q.title||'').replace(/^Câu\s*\d+\s*[.:]\s*/,'');
+  const items=q.items.map((it,k)=>{
+    const a=p.ans[k]; let box='border-slate-200 dark:border-slate-700', res='';
+    if(p.checked){ const ok=a===it.correct; box=ok?'border-green-500 bg-green-50 dark:bg-green-950/40':'border-red-500 bg-red-50 dark:bg-red-950/40';
+      res=`<p class="mt-2 text-xs font-semibold ${ok?'text-green-700 dark:text-green-300':'text-red-700 dark:text-red-300'}">${ok?'✅ Chính xác':'❌ Sai'} · Đáp án: ${it.correct?'Đúng':'Sai'}</p>`; }
+    const b=(v,l)=>`<button data-act="set" data-k="${k}" data-v="${v}" ${p.checked?'disabled':''} class="px-5 py-2 rounded-lg border-2 text-sm font-semibold transition ${a===v?(v?'bg-green-500 border-green-600 text-white':'bg-red-500 border-red-600 text-white'):'border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700'}">${l}</button>`;
+    return `<div class="rounded-xl border-2 p-4 ${box}"><p class="mb-3 text-sm sm:text-base">${esc(it.text)}</p><div class="flex gap-2">${b(true,'Đúng')}${b(false,'Sai')}</div>${res}</div>`;}).join('');
+  const all=q.items.every((_,k)=>k in p.ans);
+  let act;
+  if(!p.checked) act=`<button data-act="check2" ${all?'':'disabled'} class="mt-4 w-full ${c.btn} text-white font-semibold py-3 rounded-xl disabled:opacity-40 disabled:cursor-not-allowed">Kiểm tra kết quả</button>`;
+  else { const g=q.items.filter((it,k)=>p.ans[k]===it.correct).length;
+    act=`<div role="status" class="mt-4 p-3 rounded-xl text-sm font-medium bg-slate-100 dark:bg-slate-700">Bạn đúng ${g} / ${q.items.length} ý.</div>
+      <button data-act="next2" class="mt-3 w-full ${c.btn} text-white font-semibold py-3 rounded-xl">${p.i+1<n?'Câu tiếp theo →':'Hoàn thành Phần II'}</button>`; }
+  return `${progress(c,p.i,n,p.score,'Số ý đúng')}<div class="${card} p-5">
+    <h2 class="text-base font-bold mb-3">${esc(title)}</h2>
+    ${q.passage?`<blockquote class="mb-4 p-4 rounded-xl bg-slate-100 dark:bg-slate-900/60 border-l-4 border-slate-400 text-sm leading-relaxed italic">${esc(q.passage)}</blockquote>`:''}
+    <div class="flex flex-col gap-3">${items}</div>${act}</div>`;
+}
+
+const fmt = s => esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>');
+function part3(c){
+  const hc=c.tab.split(' ').slice(1).join(' ');
+  const secs=S.sub.p3.map(s=>{
+    let body;
+    if(s.kind==='list') body=`<ul class="list-disc pl-5 space-y-1.5">${s.lines.map(l=>`<li>${fmt(l)}</li>`).join('')}</ul>`;
+    else if(s.kind==='formula') body=`<p class="font-mono bg-slate-100 dark:bg-slate-900 p-3 rounded-lg text-center">${esc(s.lines[0])}</p>`;
+    else body=s.lines.map(l=>`<p>${fmt(l)}</p>`).join('');
+    return `<section><h3 class="text-base font-bold mb-2 ${hc}">${esc(s.h)}</h3><div class="text-sm leading-relaxed space-y-2">${body}</div></section>`;}).join('');
+  return `<div class="${card} p-5 space-y-6"><h2 class="text-lg font-extrabold border-b border-slate-200 dark:border-slate-700 pb-3">Lý thuyết &amp; tự luận trọng tâm</h2>${secs}</div>`;
+}
+
+function result(){
+  const d=S.sub, c=COLORS[d.color]||COLORS.blue;
+  const n1=S.p1.qs.length, n2=total2(d), s1=S.p1.score, s2=S.p2.score;
+  const pct=Math.round((s1+s2)/(n1+n2)*100);
+  const [lv,msg]= pct>=90?['Xuất sắc','🏆 Bạn nắm kiến thức rất vững!']: pct>=80?['Giỏi','🌟 Kết quả rất tốt, ôn thêm vài chỗ nữa là hoàn hảo.']: pct>=65?['Khá','👍 Khá ổn, hãy xem lại các câu sai.']: pct>=50?['Trung bình','📚 Cần ôn kỹ hơn để chắc kiến thức.']:['Cần cố gắng','💪 Đừng nản, làm lại để tiến bộ nhé!'];
+  const row=(l,v,t)=>`<div class="flex justify-between items-center py-3 border-b last:border-0 border-slate-100 dark:border-slate-700"><span>${l}</span><span class="font-bold">${v} / ${t}</span></div>`;
+  return `<header class="flex justify-end mb-4">${themeBtn()}</header>
+    <div class="${card} p-6 text-center">
+      <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">${d.icon} ${esc(d.title)}</p>
+      <div class="my-4 mx-auto w-32 h-32 rounded-full bg-gradient-to-br ${c.grad} text-white flex flex-col items-center justify-center"><span class="text-4xl font-extrabold">${pct}%</span></div>
+      <h2 class="text-2xl font-extrabold">${lv}</h2><p class="text-slate-600 dark:text-slate-300 mt-1 mb-5">${msg}</p>
+      <div class="text-left mb-6">${row('Phần I · Câu trắc nghiệm đúng',s1,n1)}${row('Phần II · Ý Đúng/Sai đúng',s2,n2)}${row('Tổng điểm',s1+s2,n1+n2)}</div>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <button data-act="restart" class="flex-1 ${c.btn} text-white font-semibold py-3 rounded-xl">Làm lại bài này (Xáo trộn mới)</button>
+        <button data-act="home" class="flex-1 border border-slate-300 dark:border-slate-600 font-semibold py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700">Đổi môn học</button></div></div>`;
+}
+
+function render(){ $.innerHTML = S.view==='hub'?hub(): S.view==='result'?result(): quiz(); }
+const $ = document.getElementById('app');
+
+/* ===== SỰ KIỆN ===== */
+document.addEventListener('click', e=>{
+  const b=e.target.closest('[data-act]'); if(!b||b.disabled) return;
+  const a=b.dataset.act, top=()=>window.scrollTo({top:0});
+  if(a==='open') go(b.dataset.id);
+  else if(a==='home'){ if(location.hash) location.hash=''; else {S={view:'hub'};render();} top(); return; }
+  else if(a==='theme'){ const on=document.documentElement.classList.toggle('dark'); try{localStorage.setItem('theme',on?'dark':'light')}catch(_){} }
+  else if(a==='tab'){ S.tab=+b.dataset.n; top(); }
+  else if(a==='pick'){ const p=S.p1; if(p.pick!==null) return; p.pick=+b.dataset.k; if(p.qs[p.i].o[p.pick].ok) p.score++; }
+  else if(a==='next1'){ const p=S.p1; if(p.i+1<p.qs.length){p.i++;p.pick=null;} else p.done=true; top(); }
+  else if(a==='set'){ const p=S.p2; if(p.checked) return; p.ans[+b.dataset.k]=b.dataset.v==='true'; }
+  else if(a==='check2'){ const p=S.p2; p.qs[p.i].items.forEach((it,k)=>{ if(p.ans[k]===it.correct) p.score++; }); p.checked=true; }
+  else if(a==='next2'){ const p=S.p2; if(p.i+1<p.qs.length){p.i++;p.ans={};p.checked=false;} else p.done=true; top(); }
+  else if(a==='finish'){ S.view='result'; top(); }
+  else if(a==='restart') { start(S.sub.id); return; }
+  render();
+});
+
+route();
+</script>
+</body>
+</html>
